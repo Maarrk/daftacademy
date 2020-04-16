@@ -3,12 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>ZONEX | Home</title>
 </head>
 <body>
-  <section>
-    <h1>Hello World!</h1>
-    <img src="./assets/daftcode.png" />
+  <header>
+    <div class="topbar row">
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Shop</a>
+          </li>
+          <li>
+            <a href="#">Elements</a>
+          </li>
+          <li>
+            <a href="#">Blog</a>
+          </li>
+          <li>
+            <a href="#">Page</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="brand center">
+        <h1>ZONEX</h1>
+      </div>
+      <div class="user">
+        <span>icon-user</span>
+        <span>icon-crown</span>
+      </div>
+    </div>
+    <div class="image banner"></div>
+  </header>
+  <section id="recommendations">
+    <div class="arrow"></div>
+    <div class="gallery">
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+    </div>
+    <div class="arrow"></div>
   </section>
+  <section id="new">
+    <h2>New Arrivals</h2>
+    <div class="item card"></div>
+    <div class="item card"></div>
+    <div class="item card"></div>
+    <div class="item card"></div>
+    <div class="item card"></div>
+    <div class="item card"></div>
+    <div class="item card"></div>
+    <div class="item card"></div>
+    <a href="#">All products</a>
+  </section>
+  <section id="collections">
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+  </section>
+  <section id="newsletter">
+    <h3>Our newsletter</h3>
+    <p>Join our list</p>
+    <form action="">
+      <label for="emailfield">Email address (required):</label> 
+      <input
+        type="email"
+        name="email"
+        id="emailfield"
+        autocomplete="email"
+        required
+        aria-required="true"
+        placeholder="Email address"
+      />
+      <input type="submit" value="Subscribe" />
+    </form>
+    <p>* Don't worry we don't spam</p>
+  </section>
+  <footer>
+    <div class="row">
+      <div class="card">Social media</div>
+      <div class="card">Policies</div>
+      <div class="card">Locale</div>
+    </div>
+    <div class="row">
+      <div class="card">Copyright</div>
+      <div class="card">Payments</div>
+    </div>
+  </footer>
 </body>
 </html>
