@@ -8,27 +8,56 @@
 </head>
 <body>
   <header class="hero">
-    <div class="hero-head">
-        <nav class="navbar">
-          <div class="container">
-            <div class="navbar-menu">
-              <ul class="navbar-start">
-                <li class="navbar-item"><a href="#">Home</a></li>
-                <li class="navbar-item"><a href="#">Shop</a></li>
-                <li class="navbar-item"><a href="#">Elements</a></li>
-                <li class="navbar-item"><a href="#">Blog</a></li>
-                <li class="navbar-item"><a href="#">Page</a></li>
-              </ul>
-              <ul class="navbar-end">
-                <li class="navbar-item"><a href="#">icon-user-profile</a></li>
-                <li class="navbar-item"><a href="#">icon-user-crown</a></li>
-              </ul>
-            </div>
+    <div class="hero-head is-overlay">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-menu">
+            <ul class="navbar-start">
+              <li class="navbar-item"><a href="#">Home</a></li>
+              <li class="navbar-item"><a href="#">Shop</a></li>
+              <li class="navbar-item"><a href="#">Elements</a></li>
+              <li class="navbar-item"><a href="#">Blog</a></li>
+              <li class="navbar-item"><a href="#">Page</a></li>
+            </ul>
+            <ul class="navbar-end">
+              <li class="navbar-item"><a href="#">icon-user-profile</a></li>
+              <li class="navbar-item"><a href="#">icon-user-crown</a></li>
+            </ul>
           </div>
-        </nav>
-      
+
+          <div class="navbar-brand">
+            <a
+              role="button"
+              class="navbar-burger"
+              aria-label="menu"
+              aria-expanded="false"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </nav>
     </div>
-    <div class="hero-body">Banner image</div>
+    <div class="hero-body is-paddingless">
+      <img
+        class="is-hidden-mobile"
+        src="https://via.placeholder.com/1920x550"
+        alt="Shop brand banner"
+      />
+      <img
+        class="is-hidden-tablet is-flex-mobile"
+        src="https://via.placeholder.com/768x1071"
+        alt="Shop brand banner"
+      />
+    </div>
+    <div class="is-overlay has-text-centered">
+      <img
+        class="top-header__brand-logo"
+        src="https://via.placeholder.com/117x22/333/fff"
+        alt="ZONEX brand logo">
+    </div>
   </header>
   <section id="recommendations">
     <div class="arrow"></div>
