@@ -3,7 +3,8 @@
 
 $vertical-gap: 80px
 
-.navbar__link_active
+.navbar__link_active,
+.collection__link_active
   text-decoration: underline
   text-decoration-thickness: 0.1em
 
@@ -29,3 +30,13 @@ $vertical-gap: 80px
 
 .arrivals__spacer
   margin: $vertical-gap auto
+
+.collection
+  margin: 40px
+
+// Would prefer object-fit: cover but did not work
+.collection__image
+  width: auto
+  height: auto
+  min-height: 100%
+  min-width: 100%
