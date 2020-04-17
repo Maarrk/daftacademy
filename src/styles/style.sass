@@ -1,6 +1,9 @@
 // Follow https://en.bem.info/methodology/
 // when making custom adjustments to framework
 
+@import "../../node_modules/bulma/sass/utilities/initial-variables.sass";
+@import "../../node_modules/bulma/sass/utilities/derived-variables.sass";
+
 $vertical-gap: 80px
 
 .navbar__link_active,
@@ -40,3 +43,27 @@ $vertical-gap: 80px
   height: auto
   min-height: 100%
   min-width: 100%
+
+.newsletter__spacer
+  margin-top: $vertical-gap
+
+.newsletter__form
+  background-color: none
+  border-width: 0.2rem
+  border-top-style: none
+  border-right-style: none
+  border-bottom-style: solid
+  border-left-style: none
+  border-color: $dark
+
+.newsletter__input
+  background-color: rgba(255, 255, 255, 0) // none did not work
+  border-style: none
+  flex-grow: 1
+  flex-shrink: 1
+
+.newsletter__button
+  background-color: rgba(255, 255, 255, 0) // none did not work
+  border-style: none
+  margin: 0
+  margin-left: auto

@@ -188,23 +188,28 @@
         </div>
     </div>
   </section>
-  <section id="newsletter">
-    <h3>Our newsletter</h3>
-    <p>Join our list</p>
-    <form action="">
-      <label for="emailfield">Email address (required):</label> 
-      <input
-        type="email"
-        name="email"
-        id="emailfield"
-        autocomplete="email"
-        required
-        aria-required="true"
-        placeholder="Email address"
-      />
-      <input type="submit" value="Subscribe" />
-    </form>
-    <p>* Don't worry we don't spam</p>
+  <section id="newsletter" class="columns">
+    <div class="column"></div>
+    <div class="column is-6 has-text-centered">
+      <h3 class="title is-size-4 is-spaced newsletter__spacer">Our newsletter</h3>
+      <p class="subtitle is-size-6">Join our list</p>
+      <form action="" class="level newsletter__spacer newsletter__form">
+        <label for="emailfield" class="is-sr-only">Email address (required):</label> 
+        <input
+          type="email"
+          name="email"
+          id="emailfield"
+          autocomplete="email"
+          required
+          aria-required="true"
+          placeholder="Email address"
+          class="is-size-6 newsletter__input level-left"
+        />
+        <input type="submit" value="Subscribe" class="is-size-6 newsletter__button level-right"/>
+      </form>
+      <p class="has-text-left">* Don't worry, we don't spam</p>
+    </div>
+    <div class="column"></div>
   </section>
   <footer>
     <div class="row">
