@@ -3,6 +3,7 @@
 
 @import "../../node_modules/bulma/sass/utilities/initial-variables.sass";
 @import "../../node_modules/bulma/sass/utilities/derived-variables.sass";
+@import "../../node_modules/bulma/sass/utilities/mixins.sass";
 
 $vertical-gap: 80px
 
@@ -34,8 +35,13 @@ $vertical-gap: 80px
   flex-shrink: 0
   margin: 50px 15px
 
-.arrivals__spacer
-  margin: $vertical-gap auto
++until($tablet)
+  .arrivals__spacer
+    margin: 1.5rem auto
+
++from($desktop)
+  .arrivals__spacer
+    margin: $vertical-gap auto
 
 .collection
   margin: 40px
