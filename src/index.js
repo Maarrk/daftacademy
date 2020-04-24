@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
   console.log('page loaded')
 
   import('./modules/pageutils.js').then(module => {
-    module.hello()
+    module.addButtonScroll()
   })
 
 })
