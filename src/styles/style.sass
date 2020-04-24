@@ -33,6 +33,12 @@ $vertical-gap: 80px
   overflow-y: hidden
   white-space: nowrap
 
++until($desktop)
+  .gallery
+    overflow-x: scroll
+    -webkit-overflow-scrolling: touch
+    width: 100vw
+
 .gallery__item
   display: inline-block
   flex-shrink: 0
