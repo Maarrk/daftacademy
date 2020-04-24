@@ -9,3 +9,9 @@ window.addEventListener('DOMContentLoaded', () => {
     module.updateCopyrightYear()
   })
 })
+
+window.addEventListener('load', () => {
+  import('./modules/carousel.js').then(module => {
+    module.addCarousel('gallery', 'gallery-prev', 'gallery-next')
+  })
+})

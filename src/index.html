@@ -9,7 +9,7 @@
 </head>
 <body>
   <header class="hero">
-    <div class="hero-head is-overlay">
+    <div class="hero-head is-overlay top-header__overlay">
       <nav class="navbar">
         <div class="container">
           <div class="navbar-menu">
@@ -53,7 +53,7 @@
         alt="Shop brand banner"
       />
     </div>
-    <div class="is-overlay has-text-centered">
+    <div class="is-overlay has-text-centered top-header__overlay">
       <img
         class="top-header__brand-logo"
         src="./assets/logo-zonex.svg"
@@ -61,12 +61,12 @@
     </div>
   </header>
   <section id="recommendations" class="hero level is-marginless is-paddingless has-background-dark recommendations">
-    <div class="level-item is-big is-hidden-touch is-size-2 recommendations__arrow">
+    <div id="gallery-prev" class="level-item is-big is-hidden-touch is-size-2 recommendations__arrow">
       <i class="far fa-caret-square-left"></i>
     </div>
     <div class="level-item is-narrow">
       <div class="container">
-        <div class="level is-mobile gallery">
+        <div id="gallery" class="level is-mobile gallery">
           <div class="gallery__item"><img src="https://via.placeholder.com/268x338" alt=""></div>
           <div class="gallery__item"><img src="https://via.placeholder.com/268x338" alt=""></div>
           <div class="gallery__item"><img src="https://via.placeholder.com/268x338" alt=""></div>
@@ -75,7 +75,7 @@
         </div>
       </div>
     </div>
-    <div class="level-item is-big is-hidden-touch is-size-2 recommendations__arrow">
+    <div id="gallery-next" class="level-item is-big is-hidden-touch is-size-2 recommendations__arrow">
       <i class="far fa-caret-square-right"></i>
     </div>
   </section>

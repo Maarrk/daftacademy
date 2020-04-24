@@ -19,7 +19,7 @@ function createButtonScroll() {
     font-size: ${buttonScrollHeight * 0.6}px;
     font-weight: bold;
     color: #fff;
-    background-color: #000;
+    background-color: #363636;
     border: none;
     border-radius: 50%;
   `
