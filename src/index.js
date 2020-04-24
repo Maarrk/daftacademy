@@ -6,5 +6,6 @@ window.addEventListener('DOMContentLoaded', () => {
   import('./modules/pageutils.js').then(module => {
     module.addButtonScroll()
     module.addProductLoader()
+    module.updateCopyrightYear()
   })
 })

@@ -1,3 +1,9 @@
+module.exports = {
+  addButtonScroll,
+  addProductLoader,
+  updateCopyrightYear
+}
+
 const buttonScrollWidth = 60,
   buttonScrollHeight = 60
 
@@ -33,7 +39,7 @@ function hideButtonScroll(buttonRef) {
   buttonRef.style.right = `-${buttonScrollWidth}px`
 }
 
-export function addButtonScroll() {
+function addButtonScroll() {
   var visible = false
   var buttonNode = document.body.appendChild(createButtonScroll())
 
@@ -84,17 +90,28 @@ function loadProducts(containerRef) {
   }
 }
 
-export function addProductLoader() {
+function addProductLoader() {
   var buttonProducts = document.getElementById('button-all-products')
   if(buttonProducts === null) {
-    console.log('Cannot mount ProductLoader without element: #button-all-products')
+    console.warn('Cannot mount ProductLoader without element: #button-all-products')
     return
   }
   var containerProducts = document.getElementById('container-all-products')
   if(containerProducts === null) {
-    console.log('Cannot mount ProductLoader without element: #container-all-products')
+    console.warn('Cannot mount ProductLoader without element: #container-all-products')
     return
   }
 
   buttonProducts.addEventListener('click', () => {loadProducts(containerProducts)})
+}
+
+function updateCopyrightYear() {
+  var copyrightNode = document.getElementById('text-copyright')
+  if(copyrightNode === null) {
+    console.warn('Cannot update copyright without element: #text-copyright')
+    return
+  }
+
+  let date = new Date()
+  copyrightNode.innerText = copyrightNode.innerText.replace(/20\d{2}/g, date.getFullYear().toString())
 }
