@@ -7,18 +7,31 @@ const title = document.getElementById('title')
 
 let slideIndex = 0
 
-export const nextSlide = () => {
-  if(slideIndex >= SLIDES_COUNT){
-    slideIndex = 0
-  } else {
-    slideIndex++
-  }
-
+const updateSlide = () => {
   title.innerHTML = ''
   const text = document.createTextNode(`slide${slideIndex+1}`)
   title.appendChild(text)
 
   handleCSSAnimation()
   handleCanvasAnimation(slideIndex)
-  handleThreeAnimation()
+}
+
+export const nextSlide = () => {
+  if(slideIndex >= SLIDES_COUNT){
+    slideIndex = 0
+  } else {
+    slideIndex++
+  }
+  updateSlide()
+  handleThreeAnimation(1, 1)
+}
+
+export const prevSlide = () => {
+  if(slideIndex <= 0){
+    slideIndex = SLIDES_COUNT
+  } else {
+    slideIndex--
+  }
+  updateSlide()
+  handleThreeAnimation(0, -1)
 }

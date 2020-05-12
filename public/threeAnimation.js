@@ -1,10 +1,10 @@
 import {visibleHeightAtZDepth, visibleWidthAtZDepth, lerp} from "../utils.js"
-import {nextSlide} from "../main.js"
+import { prevSlide, nextSlide } from "./main.js"
 
 const raycaster = new THREE.Raycaster()
 const objLoader = new THREE.OBJLoader()
-let arrowBox = null
-let arrowBoxRotation = 0
+let arrowBoxes = []
+let arrowBoxRotations = [0, 0]
 
 const scene = new THREE.Scene()
 const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight)
@@ -21,17 +21,23 @@ objLoader.load(
       const screenBorderRight = visibleWidthAtZDepth(-10, camera) / 2
       const screenBottom = -visibleHeightAtZDepth(-10, camera) / 2
 
-      addCube(children[0], nextSlide, screenBorderRight - 1.5, screenBottom + 1)
+      addCube(children[0], prevSlide, screenBorderRight - 2.5, screenBottom + 1, -1)
+      addCube(children[0], nextSlide, screenBorderRight - 1.5, screenBottom + 1, 1)
 
       animate()
     }
 )
 
-const addCube = (object, callbackFn, x, y) => {
+const addCube = (object, callbackFn, x, y, direction) => {
   const cubeMesh = object.clone()
 
   cubeMesh.scale.setScalar(.3)
-  cubeMesh.rotation.set(THREE.Math.degToRad(90), 0, 0)
+  if(direction < 0) {
+    cubeMesh.rotation.set(THREE.Math.degToRad(90), THREE.Math.degToRad(180), 0)
+  } else {
+    cubeMesh.rotation.set(THREE.Math.degToRad(90), 0, 0)
+  }
+  
 
   const boundingBox = new THREE.Mesh(
       new THREE.BoxGeometry(.7, .7, .7),
@@ -46,20 +52,23 @@ const addCube = (object, callbackFn, x, y) => {
 
   boundingBox.callbackFn = callbackFn
 
-  arrowBox = boundingBox
+  arrowBoxes.push(boundingBox)
   scene.add(boundingBox)
 }
 
 const animate = () => {
-  arrowBoxRotation = lerp(arrowBoxRotation, 0, .07)
-  arrowBox.rotation.set(THREE.Math.degToRad(arrowBoxRotation), 0, 0)
+  for (let index = 0; index < arrowBoxes.length; index++) {
+    const arrowBox = arrowBoxes[index];
+    arrowBoxRotations[index] = lerp(arrowBoxRotations[index], 0, .07)
+    arrowBox.rotation.set(THREE.Math.degToRad(arrowBoxRotations[index]), 0, 0) 
+  }
 
   renderer.render(scene, camera)
   requestAnimationFrame(animate)
 }
 
-export const handleThreeAnimation = () => {
-  arrowBoxRotation = 360
+export const handleThreeAnimation = (index, direction) => {
+  arrowBoxRotations[index] = 360 * Math.sign(direction)
 }
 
 window.addEventListener('click', () => {
@@ -69,6 +78,6 @@ window.addEventListener('click', () => {
 
   raycaster.setFromCamera(mousePosition, camera)
 
-  const interesctedObjects = raycaster.intersectObjects([arrowBox])
-  interesctedObjects.length && interesctedObjects[0].object.callbackFn()
+  const intersectedObjects = raycaster.intersectObjects(arrowBoxes)
+  intersectedObjects.length && intersectedObjects[0].object.callbackFn()
 })
