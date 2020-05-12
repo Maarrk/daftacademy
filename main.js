@@ -1,7 +1,7 @@
-import { handleCSSAnimation } from "data:application/javascript,../cssAnimation.js"
-import { handleCanvasAnimation } from "data:application/javascript,../canvasAnimation.js"
-import { handleThreeAnimation } from "data:application/javascript,../threeAnimation.js"
-import { SLIDES_COUNT } from "data:application/javascript,../utils.js"
+import { handleCSSAnimation } from "./cssAnimation.js"
+import { handleCanvasAnimation } from "./canvasAnimation.js"
+import { handleThreeAnimation } from "./threeAnimation.js"
+import { SLIDES_COUNT } from "./utils.js"
 
 const title = document.getElementById('title')
 
