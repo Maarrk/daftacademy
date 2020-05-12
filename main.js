@@ -1,7 +1,7 @@
-import { handleCSSAnimation } from "data:application/javascript,../cssAnimation.js"
-import { handleCanvasAnimation } from "data:application/javascript,../canvasAnimation.js"
-import { handleThreeAnimation } from "data:application/javascript,../threeAnimation.js"
-import { SLIDES_COUNT } from "data:application/javascript,../utils.js"
+const handleCSSAnimation = require("./cssAnimation.js").handleCSSAnimation;
+const handleCanvasAnimation = require("./canvasAnimation.js").handleCanvasAnimation;
+const handleThreeAnimation = require("./threeAnimation.js").handleThreeAnimation;
+const SLIDES_COUNT = require("./utils.js").SLIDES_COUNT;
 
 const title = document.getElementById('title')
 
@@ -16,7 +16,7 @@ const updateSlide = () => {
   handleCanvasAnimation(slideIndex)
 }
 
-export const nextSlide = () => {
+const nextSlide = () => {
   if(slideIndex >= SLIDES_COUNT){
     slideIndex = 0
   } else {
@@ -26,7 +26,7 @@ export const nextSlide = () => {
   handleThreeAnimation(1, 1)
 }
 
-export const prevSlide = () => {
+const prevSlide = () => {
   if(slideIndex <= 0){
     slideIndex = SLIDES_COUNT
   } else {
