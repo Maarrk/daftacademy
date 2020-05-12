@@ -1,4 +1,4 @@
-import {visibleHeightAtZDepth, visibleWidthAtZDepth, lerp} from "../utils.js"
+import {visibleHeightAtZDepth, visibleWidthAtZDepth, lerp} from "./utils.js"
 import { prevSlide, nextSlide } from "./main.js"
 
 const raycaster = new THREE.Raycaster()
